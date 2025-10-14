@@ -7,8 +7,9 @@ About the game itself, I really liked the cute, calm, and relaxing vibe the visu
 1. The r, g, and b variables are floats instead of ints, bools, or strings because the varaible is in fractional numbers. 2. The _bounce variable is an int because it shows the number of bounces of the ball, thus only comes out as an integer. 3. There was an error after Step 4 because the line was missing a semicolon (;).
 ### W3
 Group discussion [#14]: To set the light brightness based on the player's sanity level, the parameter would be the player's sanity level as a float and the return type would be void since the function changes the lighting directly and doesn't run data.
-Metaphor: Classes are skins and compoenets are skinwalkers. The skin tells skinswalkers what to do. Methods changes the behaviors. Member variables are their traits.
-There are no upper limits in how bright the balls can change in color.  
+Monobehaviour Coding:
+1. Metaphor: Classes are skins and compoenets are skinwalkers. The skin tells skinswalkers what to do. Methods changes the behaviors. Member variables are their traits.
+2. There are no upper limits in how bright the balls can change in color.  
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
