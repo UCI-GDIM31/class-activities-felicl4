@@ -10,6 +10,14 @@ Group discussion [#14]: To set the light brightness based on the player's sanity
 Monobehaviour Coding:
 1. Metaphor: Classes are skins and compoenets are skinwalkers. The skin tells skinswalkers what to do. Methods changes the behaviors. Member variables are their traits.
 2. There are no upper limits in how bright the balls can change in color.  
+### W4
+[Group #14]
+1. "_isGrounded" is a member variable, and the type is boolean. It keeps track of whether the cat is standing on the ground.
+2. This line is calling the "GetKeyDown()" method from the input component, with the parameter "KeyCode.Space" This chcekcs if the spacebar was pressed by the player and if _isGrounded(boolean) is true.
+3. The line checks if the sapce key was pressed, and if the player is grounded, the code sets "_isGrounded" to false.
+
+1. We added rigidbodies to the cat and the ball and checked Is Trigger on the goal.
+2. We didn't have the rigidbody on the cat. And, this was only my problem, but I had the cat rotaing, so I froze the rotation under the constraint.
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
