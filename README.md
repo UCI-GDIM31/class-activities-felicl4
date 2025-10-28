@@ -18,6 +18,15 @@ Monobehaviour Coding:
 
 1. We added rigidbodies to the cat and the ball and checked Is Trigger on the goal.
 2. We didn't have the rigidbody on the cat. And, this was only my problem, but I had the cat rotaing, so I froze the rotation under the constraint.
+
+### W5
+Question: What is the difference between using 'GetComponent<>()' and exposing a [SerializeField] reference in the Insepctor? 
+Answer: 'GetComponent<>()' finds another component through code while the game is running. [SerializeField] lets you manually link a component or object in the Unity Inspector before the game starts.
+
+1. The DeerW5 class needs two main variables. First, it needs a 'Transform_target' variable to represent the GameObject that the deer will walk toward. This should be serialized so that I can assign it manually in the Inspector, and it must be a Transform instead of a Vector3 beacuse a Transform holds position, rotation, and scale information. Second, the class needs a private 'NavMeshAgent _agent' variable that I can retrieve with 'GetComponent<NavMeshAgent>()' from the DeerGameObject.
+2. For methods, the calss only needs 'Start(),' which is a Unity-provided method that automatically runs once when the game begins. I'll use 'Start()' to make sure the NavMeshAgent is set up before the gameplay starts. I don't need to use 'Update()' unless the target is supposed to move continuously.
+3. In the 'Start()' method, the deer wil get its NavMeshAgent component using 'GetComponent<>,' check whether the '_target' variable has been assgined, and if so, call '_agent.SetDestination(_target.position)' to make the deer walk toward the assigned mushroom on the NavMesh. The 'SetDestination()' method is what tells Unity's navigation systme where the NavMeshAgent should move. 
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
