@@ -27,6 +27,24 @@ Answer: 'GetComponent<>()' finds another component through code while the game i
 2. For methods, the calss only needs 'Start(),' which is a Unity-provided method that automatically runs once when the game begins. I'll use 'Start()' to make sure the NavMeshAgent is set up before the gameplay starts. I don't need to use 'Update()' unless the target is supposed to move continuously.
 3. In the 'Start()' method, the deer wil get its NavMeshAgent component using 'GetComponent<>,' check whether the '_target' variable has been assgined, and if so, call '_agent.SetDestination(_target.position)' to make the deer walk toward the assigned mushroom on the NavMesh. The 'SetDestination()' method is what tells Unity's navigation systme where the NavMeshAgent should move. 
 
+### W6
+I worked on "Unity Game Engine."
+Link: https://docs.google.com/document/d/1lmiUEvktjmcBWJmVSkGWRt156K5VDO01tHGCc-V7qak/edit?tab=t.0
+
+1. What member variables does this class need?
+- float _speed (serialized): how fast the bat moves
+- Transform _playerTransform: where to chase
+
+2. What methods does this class need? Should it be something that Unity provides (like Start(), Update(), or a collision method), or one you write?
+- Update(): runs every frame when this component is enabled
+- EnableChase(Transform player): turns this component on and records the player Transform
+- DisableChase(): turns this component off
+
+3. What should the method(s) do?
+- EnableChase(player): sets 'enabled = true;' and saves player into '_playerTransform' so the bat knows the target.
+- DisableChase(): sets 'enabled = false;' so 'Update()' stops running and the bat stops moving
+- Update(): moves the bat toward '_playerTransform.position' each frame using 'Vector3.MoveTowards(currentPos, playerPos, _speed * Time.deltaTime);' so movement is frame-rate independent.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
