@@ -45,6 +45,11 @@ Link: https://docs.google.com/document/d/1lmiUEvktjmcBWJmVSkGWRt156K5VDO01tHGCc-
 - DisableChase(): sets 'enabled = false;' so 'Update()' stops running and the bat stops moving
 - Update(): moves the bat toward '_playerTransform.position' each frame using 'Vector3.MoveTowards(currentPos, playerPos, _speed * Time.deltaTime);' so movement is frame-rate independent.
 
+### W7
+1. I'm the producer and UI/UX artist.
+Link to Doc: https://docs.google.com/document/d/1sbxFwadVoEb2vnPq9DS7bAOivA7REpEKIh1f_uew8pQ/edit?tab=t.0
+2. The original line used 'Vector3.forward,' which always moves the Muskrat along the world's Z-axis instead of its own facing direction. This caused movement to ignore the Muskrat's rotation. By replacing it with 'transform.Translate(..),' I made the movement occur in the Muskrat's local space, so now it correctly moves forward and background relative to where it's facing.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
